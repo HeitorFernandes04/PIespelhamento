@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw
 from operacoes import adicionar, subtrair, espelhar
 
 
-def gerar_ruidosa(imagem, intensidade=25):
+def gerar_ruidosa(imagem, intensidade=8):
     ruido = np.random.normal(0, intensidade, imagem.shape)
     ruidosa = imagem.astype(np.float64) + ruido
     return np.clip(ruidosa, 0, 255).astype(np.uint8)
